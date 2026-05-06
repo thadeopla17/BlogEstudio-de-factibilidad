@@ -32,7 +32,6 @@
     overflow-x: hidden;
   }
 
-  /* ── NAV ── */
   nav {
     position: sticky; top: 0; z-index: 100;
     background: var(--pine);
@@ -54,7 +53,6 @@
   }
   nav ul a:hover { color: var(--amber); }
 
-  /* ── HERO ── */
   .hero {
     background: var(--pine);
     color: var(--cream);
@@ -95,7 +93,6 @@
   .btn-pinterest:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(230,0,35,.45); }
   .btn-pinterest svg { width: 20px; height: 20px; }
 
-  /* ── LAYOUT ── */
   .container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
 
   section { padding: 4.5rem 0; border-bottom: 1px solid var(--border); }
@@ -118,7 +115,6 @@
   }
   p { margin-bottom: 1rem; color: #2e3a35; }
 
-  /* ── CONCEPT CARDS ── */
   .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -150,7 +146,6 @@
   .tag.amber { background: var(--amber-light); color: #8a5520; }
   .tag.rust  { background: var(--rust-light); color: var(--rust); }
 
-  /* ── TABLE ── */
   .table-wrap { overflow-x: auto; margin-top: 1.8rem; border-radius: 8px; box-shadow: 0 2px 16px rgba(0,0,0,.07); }
   table { width: 100%; border-collapse: collapse; background: #fff; }
   thead tr { background: var(--pine); color: var(--cream); }
@@ -170,7 +165,6 @@
   td.check { color: var(--sage); font-size: 1.1rem; }
   td.cross { color: var(--rust); font-size: 1.1rem; }
 
-  /* ── PARTS ── */
   .parts-list { margin-top: 1.8rem; display: flex; flex-direction: column; gap: 1rem; }
   .part-item {
     display: grid; grid-template-columns: 48px 1fr;
@@ -189,12 +183,10 @@
   .part-content h3 { font-size: .96rem; margin-bottom: .3rem; color: var(--pine); }
   .part-content p { font-size: .86rem; color: #4a5550; margin: 0; }
 
-  /* ── CONTRAST TABLE ── */
   .contrast-yes { color: #2d6b40; font-weight: 600; }
   .contrast-no  { color: var(--rust); font-weight: 600; }
   .contrast-extra { color: var(--amber); font-weight: 600; }
 
-  /* ── EXAMPLE BLOCK ── */
   .example-box {
     background: linear-gradient(135deg, var(--pine) 0%, #2d6b54 100%);
     color: var(--cream); border-radius: 12px; padding: 2.5rem;
@@ -216,7 +208,6 @@
   }
   .example-box a:hover { opacity: .85; }
 
-  /* ── GENIALLY BLOCK ── */
   .genially-box {
     background: linear-gradient(135deg, #6d28d9 0%, #a855f7 100%);
     color: #fff; border-radius: 12px; padding: 2rem 2.5rem;
@@ -234,7 +225,6 @@
   }
   .genially-text a:hover { opacity: .88; }
 
-  /* ── PINTEREST CTA ── */
   .pinterest-cta {
     background: var(--cream); border: 2px solid #e60023;
     border-radius: 12px; padding: 2.5rem; text-align: center;
@@ -252,7 +242,6 @@
   }
   .btn-big-pinterest:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(230,0,35,.4); }
 
-  /* ── FOOTER ── */
   footer {
     background: var(--pine); color: #7da89a;
     text-align: center; padding: 2.5rem;
@@ -260,7 +249,6 @@
   }
   footer strong { color: var(--amber); }
 
-  /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(22px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -270,7 +258,6 @@
   .fade-up:nth-child(3) { animation-delay: .2s; }
   .fade-up:nth-child(4) { animation-delay: .3s; }
 
-  /* ── CALLOUT ── */
   .callout {
     border-left: 4px solid var(--amber);
     background: var(--amber-light);
@@ -283,7 +270,6 @@
     border-color: var(--sage); background: var(--sage-light); color: #1e3d30;
   }
 
-  /* RESPONSIVE */
   @media (max-width: 640px) {
     nav ul { display: none; }
     .hero { padding: 4rem 1.5rem; }
@@ -295,7 +281,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="brand" href="#">📚 Ingeniería de Software</a>
   <ul>
@@ -307,20 +292,18 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <span class="hero-tag">Tablero Digital · Ingeniería de Software</span>
     <h1>Estudios de <em>Factibilidad</em><br>y Viabilidad</h1>
     <p>Explora los conceptos fundamentales, herramientas de análisis y ejemplos reales para comprender y aplicar estudios de factibilidad en proyectos de software.</p>
-    <a class="btn-pinterest" href="https://www.pinterest.com.mx/" target="_blank">
+    <a class="btn-pinterest" href="https://pin.it/3CG7Gkgsr" target="_blank">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
       Ver Tablero en Pinterest
     </a>
   </div>
 </div>
 
-<!-- SECTION 1: CONCEPTOS -->
 <section id="conceptos">
   <div class="container">
     <div class="section-label">📌 Pin 1 · Conceptos clave</div>
@@ -390,7 +373,6 @@
       </div>
     </div>
 
-    <!-- GENIALLY -->
     <div class="genially-box">
       <div class="genially-icon">✨</div>
       <div class="genially-text">
@@ -402,7 +384,6 @@
   </div>
 </section>
 
-<!-- SECTION 2: COMPARATIVO -->
 <section id="comparativo">
   <div class="container">
     <div class="section-label">📌 Pin 2 · Cuadro comparativo</div>
@@ -479,7 +460,6 @@
   </div>
 </section>
 
-<!-- SECTION 3: PARTES -->
 <section id="partes">
   <div class="container">
     <div class="section-label">📌 Pin 3 · Estructura del documento</div>
@@ -582,7 +562,6 @@
   </div>
 </section>
 
-<!-- SECTION 4: EJEMPLO + CONTRASTE -->
 <section id="ejemplo">
   <div class="container">
     <div class="section-label">📌 Pin 4 · Caso real</div>
@@ -704,14 +683,13 @@
   </div>
 </section>
 
-<!-- PINTEREST CTA -->
 <section id="pinterest">
   <div class="container">
     <div class="pinterest-cta">
       <svg style="width:52px;height:52px;margin-bottom:1rem" viewBox="0 0 24 24" fill="#e60023"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
       <h2>Visita el Tablero en Pinterest</h2>
       <p>Todos los conceptos, cuadros comparativos, partes del estudio y el ejemplo real están organizados como PINs en nuestro tablero de Pinterest. ¡Guárdalo y compártelo!</p>
-      <a class="btn-big-pinterest" href="https://www.pinterest.com.mx/" target="_blank">
+      <a class="btn-big-pinterest" href="https://pin.it/3CG7Gkgsr" target="_blank">
         <svg style="width:22px;height:22px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
         Ir al Tablero en Pinterest →
       </a>
