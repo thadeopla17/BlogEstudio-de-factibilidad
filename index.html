@@ -135,16 +135,6 @@
   .card-icon { font-size: 1.8rem; margin-bottom: .6rem; }
   .card h3 { font-size: 1rem; margin-bottom: .5rem; }
   .card p { font-size: .88rem; color: #4a5550; margin: 0; }
-  .card .meta {
-    margin-top: .9rem; display: flex; flex-wrap: wrap; gap: .4rem;
-  }
-  .tag {
-    font-size: .7rem; font-weight: 600; letter-spacing: .07em;
-    padding: .2rem .65rem; border-radius: 20px;
-    background: var(--sage-light); color: var(--sage);
-  }
-  .tag.amber { background: var(--amber-light); color: #8a5520; }
-  .tag.rust  { background: var(--rust-light); color: var(--rust); }
 
   .table-wrap { overflow-x: auto; margin-top: 1.8rem; border-radius: 8px; box-shadow: 0 2px 16px rgba(0,0,0,.07); }
   table { width: 100%; border-collapse: collapse; background: #fff; }
@@ -158,124 +148,69 @@
     padding: .85rem 1.1rem; font-size: .9rem;
     border-bottom: 1px solid var(--mist); vertical-align: top;
   }
-  tr:last-child td { border-bottom: none; }
   tbody tr:nth-child(even) { background: var(--mist); }
-  tbody tr:hover { background: var(--sage-light); }
   td:first-child { font-weight: 600; color: var(--pine); }
-  td.check { color: var(--sage); font-size: 1.1rem; }
-  td.cross { color: var(--rust); font-size: 1.1rem; }
+  td.check { color: var(--sage); }
+  td.cross { color: var(--rust); }
 
-  .parts-list { margin-top: 1.8rem; display: flex; flex-direction: column; gap: 1rem; }
-  .part-item {
-    display: grid; grid-template-columns: 48px 1fr;
-    gap: 1rem; align-items: start;
-    background: #fff; border: 1px solid var(--border);
-    border-radius: 8px; padding: 1.2rem 1.4rem;
-    transition: border-color .2s;
+  .genially-container {
+    width: 100%;
+    margin-top: 2rem;
+    position: relative;
+    padding-top: 56.25%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
-  .part-item:hover { border-color: var(--sage); }
-  .part-num {
-    background: var(--pine); color: var(--cream);
-    font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-    width: 42px; height: 42px; border-radius: 6px; flex-shrink: 0;
+  .genially-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
   }
-  .part-content h3 { font-size: .96rem; margin-bottom: .3rem; color: var(--pine); }
-  .part-content p { font-size: .86rem; color: #4a5550; margin: 0; }
 
-  .contrast-yes { color: #2d6b40; font-weight: 600; }
-  .contrast-no  { color: var(--rust); font-weight: 600; }
-  .contrast-extra { color: var(--amber); font-weight: 600; }
-
-  .example-box {
-    background: linear-gradient(135deg, var(--pine) 0%, #2d6b54 100%);
-    color: var(--cream); border-radius: 12px; padding: 2.5rem;
-    margin-top: 2rem; position: relative; overflow: hidden;
+  .team-section {
+    background: var(--pine);
+    color: #b8cec7;
+    padding: 4rem 0;
+    border-top: 4px solid var(--amber);
   }
-  .example-box::before {
-    content: '📄';
-    position: absolute; right: 2rem; top: 50%; transform: translateY(-50%);
-    font-size: 5rem; opacity: .12;
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
   }
-  .example-box h3 { color: var(--amber); font-size: 1.3rem; margin-bottom: .6rem; }
-  .example-box p { color: #b8cec7; font-size: .92rem; }
-  .example-box a {
-    display: inline-flex; align-items: center; gap: .4rem;
-    background: var(--amber); color: var(--pine); font-weight: 700;
-    padding: .6rem 1.4rem; border-radius: 4px; text-decoration: none;
-    margin-top: 1.2rem; font-size: .9rem;
-    transition: opacity .2s;
+  .team-member {
+    border-left: 2px solid var(--amber);
+    padding-left: 1rem;
   }
-  .example-box a:hover { opacity: .85; }
-
-  .genially-box {
-    background: linear-gradient(135deg, #6d28d9 0%, #a855f7 100%);
-    color: #fff; border-radius: 12px; padding: 2rem 2.5rem;
-    margin-top: 2rem; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+  .team-member h4 {
+    color: var(--cream);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
   }
-  .genially-icon { font-size: 3rem; flex-shrink: 0; }
-  .genially-text h3 { color: #fde68a; font-size: 1.15rem; margin-bottom: .4rem; }
-  .genially-text p { color: #e9d5ff; font-size: .88rem; margin: 0; }
-  .genially-text a {
-    display: inline-block; margin-top: .8rem;
-    background: #fff; color: #6d28d9; font-weight: 700;
-    padding: .5rem 1.2rem; border-radius: 4px;
-    text-decoration: none; font-size: .88rem;
-    transition: opacity .2s;
+  .team-member p {
+    color: var(--amber);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
   }
-  .genially-text a:hover { opacity: .88; }
-
-  .pinterest-cta {
-    background: var(--cream); border: 2px solid #e60023;
-    border-radius: 12px; padding: 2.5rem; text-align: center;
-    margin: 3rem 0;
-  }
-  .pinterest-cta h2 { color: #e60023; margin-bottom: .8rem; }
-  .pinterest-cta p { color: #4a5550; margin-bottom: 1.6rem; max-width: 480px; margin-left: auto; margin-right: auto; }
-  .btn-big-pinterest {
-    display: inline-flex; align-items: center; gap: .7rem;
-    background: #e60023; color: #fff;
-    padding: 1rem 2.4rem; border-radius: 6px;
-    font-weight: 700; font-size: 1.05rem; text-decoration: none;
-    box-shadow: 0 6px 24px rgba(230,0,35,.3);
-    transition: transform .2s, box-shadow .2s;
-  }
-  .btn-big-pinterest:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(230,0,35,.4); }
 
   footer {
-    background: var(--pine); color: #7da89a;
-    text-align: center; padding: 2.5rem;
-    font-size: .82rem; letter-spacing: .04em;
-  }
-  footer strong { color: var(--amber); }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(22px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .fade-up { animation: fadeUp .6s ease both; }
-  .fade-up:nth-child(2) { animation-delay: .1s; }
-  .fade-up:nth-child(3) { animation-delay: .2s; }
-  .fade-up:nth-child(4) { animation-delay: .3s; }
-
-  .callout {
-    border-left: 4px solid var(--amber);
-    background: var(--amber-light);
-    padding: 1rem 1.4rem;
-    border-radius: 0 6px 6px 0;
-    margin: 1.4rem 0;
-    font-size: .93rem; color: #5a3d10;
-  }
-  .callout.sage {
-    border-color: var(--sage); background: var(--sage-light); color: #1e3d30;
+    background: #0d2119;
+    color: #7da89a;
+    text-align: center;
+    padding: 2rem;
+    font-size: .82rem;
   }
 
   @media (max-width: 640px) {
     nav ul { display: none; }
     .hero { padding: 4rem 1.5rem; }
-    section { padding: 3rem 0; }
     .container { padding: 0 1.2rem; }
-    .genially-box { flex-direction: column; }
   }
 </style>
 </head>
@@ -306,153 +241,49 @@
 
 <section id="conceptos">
   <div class="container">
-    <div class="section-label">📌 Pin 1 · Conceptos clave</div>
-    <h2>Glosario Esencial de Factibilidad</h2>
-    <p>Antes de comenzar cualquier proyecto de software, es indispensable dominar estos conceptos. Aquí los tienes organizados para tu tablero de Pinterest.</p>
-
-    <div class="cards-grid">
-      <div class="card fade-up">
-        <div class="card-icon">🔍</div>
-        <h3>Estudio de Viabilidad</h3>
-        <p>Análisis preliminar que determina si un proyecto <strong>puede llevarse a cabo</strong> desde el punto de vista técnico, económico, legal y operativo. Responde a la pregunta: <em>¿Es posible hacerlo?</em></p>
-        <div class="meta">
-          <span class="tag">Fase inicial</span>
-          <span class="tag">Alto nivel</span>
-        </div>
-      </div>
-
-      <div class="card amber fade-up">
-        <div class="card-icon">📊</div>
-        <h3>Estudio de Factibilidad</h3>
-        <p>Análisis <strong>detallado y profundo</strong> que evalúa si el proyecto conviene realizarse. Va más allá de la viabilidad: cuantifica costos, beneficios y riesgos con precisión. Responde: <em>¿Vale la pena hacerlo?</em></p>
-        <div class="meta">
-          <span class="tag amber">Detallado</span>
-          <span class="tag amber">Cuantitativo</span>
-        </div>
-      </div>
-
-      <div class="card rust fade-up">
-        <div class="card-icon">💰</div>
-        <h3>Factibilidad Financiera (FPA)</h3>
-        <p>Evalúa si el proyecto generará <strong>retorno de inversión</strong>. Incluye análisis de costo-beneficio, VAN (Valor Actual Neto), TIR (Tasa Interna de Retorno) y período de recuperación. Determina la rentabilidad del sistema.</p>
-        <div class="meta">
-          <span class="tag rust">VAN · TIR</span>
-          <span class="tag rust">ROI</span>
-        </div>
-      </div>
-
-      <div class="card pine fade-up">
-        <div class="card-icon">📐</div>
-        <h3>Puntos de Casos de Uso (PCU)</h3>
-        <p>Método de estimación de <strong>tamaño y esfuerzo</strong> de un proyecto de software. Se basa en contar actores y casos de uso, ajustar por complejidad técnica y ambiental, y calcular horas-hombre necesarias.</p>
-        <div class="meta">
-          <span class="tag">UUCW</span>
-          <span class="tag">UAW</span>
-          <span class="tag">TCF · ECF</span>
-        </div>
-      </div>
-
-      <div class="card fade-up">
-        <div class="card-icon">📋</div>
-        <h3>Requerimientos / Requisitos</h3>
-        <p>Descripciones de lo que el sistema <strong>debe hacer</strong> (funcionales) o cómo debe comportarse (no funcionales). Son la base de todo análisis de factibilidad. Sin requisitos claros, no hay estudio confiable.</p>
-        <div class="meta">
-          <span class="tag">Funcionales</span>
-          <span class="tag">No funcionales</span>
-        </div>
-      </div>
-
-      <div class="card amber fade-up">
-        <div class="card-icon">❓</div>
-        <h3>¿Para qué sirve? ¿Cuándo se hace?</h3>
-        <p><strong>Para qué:</strong> Tomar decisiones informadas antes de invertir recursos. <strong>Cuándo:</strong> Al inicio del ciclo de vida del proyecto, durante la <em>fase de concepción o inicio</em>, antes del diseño y desarrollo.</p>
-        <div class="meta">
-          <span class="tag amber">Fase de inicio</span>
-          <span class="tag amber">Toma de decisiones</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="genially-box">
-      <div class="genially-icon">✨</div>
-      <div class="genially-text">
-        <h3>Imagen Iterativa · Diseñada en Genially</h3>
-        <p>Se recomienda crear en Genially una infografía interactiva que muestre el ciclo iterativo de los conceptos anteriores: desde los requisitos hasta la factibilidad financiera. Incluye animaciones, capas y enlaces a recursos.</p>
-        <a href="https://genially.com" target="_blank">Crear en Genially →</a>
-      </div>
+    <div class="section-label">📌 Pin 1 · Infografía Interactiva</div>
+    <h2>Glosario y Conceptos en Genially</h2>
+    <p>Explora la siguiente infografía para profundizar en los términos clave de la ingeniería de software.</p>
+    
+    <div class="genially-container">
+      <iframe title="Estudios de Factibilidad" allowfullscreen="true" allow="fullscreen" src="https://view.genially.com/69fb88e8af8ea6599baabe50" type="text/html"></iframe>
     </div>
   </div>
 </section>
 
 <section id="comparativo">
   <div class="container">
-    <div class="section-label">📌 Pin 2 · Cuadro comparativo</div>
-    <h2>Estudio de Factibilidad vs. Estudio de Viabilidad</h2>
-    <p>Aunque se usan de forma intercambiable, existen diferencias importantes. Este cuadro comparativo debe añadirse como <strong>PIN visual</strong> al tablero de Pinterest.</p>
-
-    <div class="callout">
-      💡 <strong>Regla práctica:</strong> El estudio de <em>viabilidad</em> pregunta «¿Se puede hacer?»; el de <em>factibilidad</em> pregunta «¿Conviene hacerlo y cómo?». Uno es exploración; el otro, análisis profundo.
-    </div>
-
+    <div class="section-label">📌 Pin 2 · Análisis Comparativo</div>
+    <h2>Factibilidad vs. Viabilidad</h2>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
             <th>Criterio</th>
-            <th>Estudio de Viabilidad</th>
-            <th>Estudio de Factibilidad</th>
+            <th>Viabilidad</th>
+            <th>Factibilidad</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Propósito principal</td>
-            <td>Determinar si el proyecto <em>puede</em> realizarse</td>
-            <td>Determinar si el proyecto <em>conviene</em> realizarse</td>
+            <td>Propósito</td>
+            <td>¿Es posible hacerlo?</td>
+            <td>¿Conviene hacerlo?</td>
           </tr>
           <tr>
-            <td>Profundidad del análisis</td>
-            <td>Superficial / Alto nivel</td>
+            <td>Análisis</td>
+            <td>Alto nivel / Superficial</td>
             <td>Detallado / Cuantitativo</td>
           </tr>
           <tr>
-            <td>Momento de realización</td>
-            <td>Antes del estudio de factibilidad</td>
-            <td>Después de confirmar viabilidad</td>
+            <td>Costo</td>
+            <td>Bajo</td>
+            <td>Alto</td>
           </tr>
           <tr>
-            <td>Costo del análisis</td>
-            <td>Bajo (pocas semanas)</td>
-            <td>Alto (semanas a meses)</td>
-          </tr>
-          <tr>
-            <td>Dimensiones analizadas</td>
-            <td>Técnica, legal, operativa, económica (general)</td>
-            <td>Técnica, económica, financiera, operativa, legal, ambiental (detalle)</td>
-          </tr>
-          <tr>
-            <td>Incluye estimación de costos exactos</td>
-            <td class="cross">✗ No</td>
-            <td class="check">✓ Sí</td>
-          </tr>
-          <tr>
-            <td>Incluye análisis financiero (VAN, TIR)</td>
-            <td class="cross">✗ No</td>
-            <td class="check">✓ Sí</td>
-          </tr>
-          <tr>
-            <td>Incluye plan de implementación</td>
-            <td class="cross">✗ No</td>
-            <td class="check">✓ Sí</td>
-          </tr>
-          <tr>
-            <td>Resultado esperado</td>
-            <td>«Sí es posible / No es posible»</td>
-            <td>Informe detallado con recomendación fundamentada</td>
-          </tr>
-          <tr>
-            <td>Uso en proyectos de software</td>
-            <td>Ideas iniciales, emprendimientos</td>
-            <td>Proyectos formales, licitaciones, inversión</td>
+            <td>Financiero (VAN/TIR)</td>
+            <td class="cross">No incluido</td>
+            <td class="check">✓ Sí incluido</td>
           </tr>
         </tbody>
       </table>
@@ -460,251 +291,34 @@
   </div>
 </section>
 
-<section id="partes">
+<section class="team-section">
   <div class="container">
-    <div class="section-label">📌 Pin 3 · Estructura del documento</div>
-    <h2>Partes de un Estudio de Factibilidad</h2>
-    <p>Un documento formal de estudio de factibilidad incluye las siguientes secciones estándar. Cada una cumple un rol específico en la toma de decisiones.</p>
-
-    <div class="parts-list">
-      <div class="part-item">
-        <div class="part-num">1</div>
-        <div class="part-content">
-          <h3>Portada e Identificación del Proyecto</h3>
-          <p>Nombre del proyecto, organización solicitante, equipo responsable, fecha de elaboración y versión del documento.</p>
-        </div>
+    <div class="section-label" style="color: var(--amber)">👥 Colaboradores</div>
+    <h2 style="color: var(--cream)">Equipo de Trabajo</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <h4>Debbie Marina Padilla Lara</h4>
+        <p>Ingeniería de Software</p>
       </div>
-      <div class="part-item">
-        <div class="part-num">2</div>
-        <div class="part-content">
-          <h3>Resumen Ejecutivo</h3>
-          <p>Síntesis de los hallazgos más importantes y la recomendación final. Está dirigida a tomadores de decisión que no leerán el documento completo.</p>
-        </div>
+      <div class="team-member">
+        <h4>Luis Angel Alcantar Gutierrez</h4>
+        <p>Ingeniería de Software</p>
       </div>
-      <div class="part-item">
-        <div class="part-num">3</div>
-        <div class="part-content">
-          <h3>Introducción y Antecedentes</h3>
-          <p>Contexto del problema, justificación del proyecto, alcance del estudio y limitaciones identificadas.</p>
-        </div>
+      <div class="team-member">
+        <h4>Cesar Augusto Sanchez Monrroy</h4>
+        <p>Ingeniería de Software</p>
       </div>
-      <div class="part-item">
-        <div class="part-num">4</div>
-        <div class="part-content">
-          <h3>Descripción del Sistema Propuesto</h3>
-          <p>Qué hace el sistema, quiénes son los usuarios, qué procesos automatiza o mejora. Incluye objetivos generales y específicos.</p>
-        </div>
+      <div class="team-member">
+        <h4>Axel Tadeo Romero Pla</h4>
+        <p>Ingeniería de Software</p>
       </div>
-      <div class="part-item">
-        <div class="part-num">5</div>
-        <div class="part-content">
-          <h3>Factibilidad Técnica</h3>
-          <p>¿Existe la tecnología necesaria? Análisis de hardware, software, infraestructura, experiencia del equipo y disponibilidad tecnológica.</p>
-        </div>
-      </div>
-      <div class="part-item">
-        <div class="part-num">6</div>
-        <div class="part-content">
-          <h3>Factibilidad Operativa</h3>
-          <p>¿La organización puede operar el sistema? Evalúa aceptación del usuario, capacitación requerida, cambios en procesos y resistencia al cambio.</p>
-        </div>
-      </div>
-      <div class="part-item">
-        <div class="part-num">7</div>
-        <div class="part-content">
-          <h3>Factibilidad Económica y Financiera</h3>
-          <p>Estimación de costos de desarrollo, implementación y mantenimiento. Cálculo de beneficios tangibles e intangibles, VAN, TIR, período de recuperación y análisis costo-beneficio.</p>
-        </div>
-      </div>
-      <div class="part-item">
-        <div class="part-num">8</div>
-        <div class="part-content">
-          <h3>Factibilidad Legal y Normativa</h3>
-          <p>Cumplimiento de leyes, reglamentos y normas aplicables (p. ej. LFPDPPP en México, RGPD en Europa, normas ISO, etc.).</p>
-        </div>
-      </div>
-      <div class="part-item">
-        <div class="part-num">9</div>
-        <div class="part-content">
-          <h3>Análisis de Riesgos</h3>
-          <p>Identificación de riesgos técnicos, financieros y operativos. Evaluación de probabilidad e impacto, y propuestas de mitigación.</p>
-        </div>
-      </div>
-      <div class="part-item">
-        <div class="part-num">10</div>
-        <div class="part-content">
-          <h3>Alternativas de Solución</h3>
-          <p>Propuesta de al menos dos o tres alternativas técnicas o de desarrollo, con pros y contras de cada una.</p>
-        </div>
-      </div>
-      <div class="part-item">
-        <div class="part-num">11</div>
-        <div class="part-content">
-          <h3>Plan Preliminar de Implementación</h3>
-          <p>Cronograma estimado de fases del proyecto, recursos humanos requeridos y hitos principales.</p>
-        </div>
-      </div>
-      <div class="part-item">
-        <div class="part-num">12</div>
-        <div class="part-content">
-          <h3>Conclusiones y Recomendación</h3>
-          <p>Juicio global sobre si se recomienda proceder con el proyecto y bajo qué condiciones o alternativa seleccionada.</p>
-        </div>
-      </div>
-      <div class="part-item">
-        <div class="part-num">13</div>
-        <div class="part-content">
-          <h3>Bibliografía y Anexos</h3>
-          <p>Fuentes de información consultadas, cotizaciones de proveedores, entrevistas, encuestas y cualquier documento de respaldo.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="ejemplo">
-  <div class="container">
-    <div class="section-label">📌 Pin 4 · Caso real</div>
-    <h2>Ejemplo Real: Estudio de Factibilidad</h2>
-    <p>Se tomó como referencia un estudio de factibilidad real de un <strong>Sistema de Gestión de Biblioteca Universitaria</strong> obtenido de repositorios académicos. A continuación se presenta su índice y el análisis comparativo.</p>
-
-    <div class="example-box">
-      <h3>📄 Sistema de Gestión de Biblioteca — Universidad Nacional</h3>
-      <p>Estudio de factibilidad completo para la automatización del sistema de préstamo, devolución y catalogación de una biblioteca universitaria. Incluye análisis técnico, financiero y operativo.</p>
-      <a href="https://repositorio.unam.mx" target="_blank">Ver ejemplo en repositorio →</a>
-    </div>
-
-    <div class="callout sage" style="margin-top:2rem">
-      📑 <strong>Índice recuperado del ejemplo real:</strong><br>
-      1. Portada · 2. Introducción · 3. Descripción del sistema actual · 4. Descripción del sistema propuesto · 5. Factibilidad técnica · 6. Factibilidad económica · 7. Factibilidad operativa · 8. Conclusiones · 9. Bibliografía
-    </div>
-
-    <h3 style="margin-top:2.5rem; font-family:'Playfair Display',serif; font-size:1.4rem;">Cuadro Comparativo: Ejemplo Real vs. Estructura Estándar</h3>
-    <p>Contraste entre lo que tiene el ejemplo real y lo que contempla la estructura completa de un estudio de factibilidad formal:</p>
-
-    <div class="table-wrap" style="margin-top:1.2rem">
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Parte del estudio estándar</th>
-            <th>¿La tiene el ejemplo?</th>
-            <th>Observación</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Portada e identificación</td>
-            <td class="contrast-yes">✓ Sí</td>
-            <td>Completa con nombre y fecha</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Resumen ejecutivo</td>
-            <td class="contrast-no">✗ No</td>
-            <td><strong>Faltante:</strong> carece de síntesis ejecutiva inicial</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Introducción y antecedentes</td>
-            <td class="contrast-yes">✓ Sí</td>
-            <td>Sección 2 del ejemplo la cubre</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Descripción del sistema propuesto</td>
-            <td class="contrast-yes">✓ Sí</td>
-            <td>Sección 4 del ejemplo</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Factibilidad técnica</td>
-            <td class="contrast-yes">✓ Sí</td>
-            <td>Sección 5 del ejemplo</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Factibilidad operativa</td>
-            <td class="contrast-yes">✓ Sí</td>
-            <td>Sección 7 del ejemplo</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>Factibilidad financiera (VAN, TIR)</td>
-            <td class="contrast-no">✗ Parcial</td>
-            <td><strong>Incompleto:</strong> solo presenta costos, sin VAN/TIR/ROI</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>Factibilidad legal y normativa</td>
-            <td class="contrast-no">✗ No</td>
-            <td><strong>Faltante:</strong> no analiza marco legal</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>Análisis de riesgos</td>
-            <td class="contrast-no">✗ No</td>
-            <td><strong>Faltante:</strong> no identifica ni mitiga riesgos</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>Alternativas de solución</td>
-            <td class="contrast-extra">⊕ Extra</td>
-            <td><strong>Adicional:</strong> describe sistema actual como contraste</td>
-          </tr>
-          <tr>
-            <td>11</td>
-            <td>Plan preliminar de implementación</td>
-            <td class="contrast-no">✗ No</td>
-            <td><strong>Faltante:</strong> no incluye cronograma</td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>Conclusiones y recomendación</td>
-            <td class="contrast-yes">✓ Sí</td>
-            <td>Sección 8 del ejemplo</td>
-          </tr>
-          <tr>
-            <td>13</td>
-            <td>Bibliografía y anexos</td>
-            <td class="contrast-yes">✓ Sí</td>
-            <td>Sección 9 del ejemplo</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="callout" style="margin-top:1.6rem">
-      ✅ <strong>Partes que SÍ tiene el ejemplo (7/13):</strong> Portada, Introducción, Descripción del sistema, Factibilidad técnica, Factibilidad operativa, Conclusiones, Bibliografía.<br><br>
-      ❌ <strong>Partes FALTANTES (5/13):</strong> Resumen ejecutivo, Factibilidad financiera completa (VAN/TIR), Factibilidad legal, Análisis de riesgos, Plan de implementación.<br><br>
-      ⊕ <strong>Parte ADICIONAL (1):</strong> Descripción del sistema actual (no obligatoria pero enriquecedora).
-    </div>
-  </div>
-</section>
-
-<section id="pinterest">
-  <div class="container">
-    <div class="pinterest-cta">
-      <svg style="width:52px;height:52px;margin-bottom:1rem" viewBox="0 0 24 24" fill="#e60023"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-      <h2>Visita el Tablero en Pinterest</h2>
-      <p>Todos los conceptos, cuadros comparativos, partes del estudio y el ejemplo real están organizados como PINs en nuestro tablero de Pinterest. ¡Guárdalo y compártelo!</p>
-      <a class="btn-big-pinterest" href="https://pin.it/3CG7Gkgsr" target="_blank">
-        <svg style="width:22px;height:22px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-        Ir al Tablero en Pinterest →
-      </a>
-    </div>
-
-    <div class="callout sage">
-      🗂️ <strong>Resumen de PINs del tablero:</strong><br>
-      <strong>Pin 1:</strong> Infografía interactiva de conceptos (Genially) · <strong>Pin 2:</strong> Cuadro comparativo Factibilidad vs. Viabilidad · <strong>Pin 3:</strong> Partes del estudio de factibilidad · <strong>Pin 4:</strong> Ejemplo real en PDF + cuadro de contraste
     </div>
   </div>
 </section>
 
 <footer>
-  <p>Elaborado para la materia de <strong>Ingeniería de Software</strong> · Tablero Digital sobre Estudios de Factibilidad y Viabilidad</p>
-  <p style="margin-top:.5rem">Blog académico · 2025 — Todos los derechos reservados</p>
+  <p>Blog Académico · Ingeniería de Software · 2026</p>
+  <p style="margin-top: 0.5rem; font-size: 0.7rem; opacity: 0.6;">Universidad Autónoma del Estado de México</p>
 </footer>
 
 </body>
