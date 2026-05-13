@@ -3,130 +3,343 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estudios de Factibilidad y Viabilidad · Blog Académico</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Factibilidad y Viabilidad · Ingeniería de Software</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0d1117;
-    --cream: #faf7f2;
-    --sage: #3d6b5e;
-    --sage-light: #e8f0ed;
-    --amber: #c9803a;
-    --amber-light: #fef3e2;
-    --rust: #b84432;
-    --rust-light: #fcecea;
-    --pine: #1b3d2f;
-    --mist: #f0ede8;
-    --border: #d9d3ca;
+    --bg-body: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --accent: #38bdf8;
+    --danger: #e11d48;
+    --border: #e2e8f0;
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--ink);
-    line-height: 1.7;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
     overflow-x: hidden;
   }
 
   nav {
-    position: sticky; top: 0; z-index: 100;
-    background: var(--pine);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
     padding: 0 2.5rem;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 58px;
-    border-bottom: 3px solid var(--amber);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
   }
   
   nav .brand {
-    font-family: 'Playfair Display', serif;
-    color: var(--cream); font-size: 1.1rem; letter-spacing: .03em;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-main);
+    font-size: 1.2rem;
+    font-weight: 700;
     text-decoration: none;
+    letter-spacing: -0.02em;
   }
   
-  nav ul { display: flex; gap: 1.8rem; list-style: none; }
+  nav ul { display: flex; gap: 2rem; list-style: none; }
   nav ul a {
-    color: #c8d8d0; font-size: .82rem; font-weight: 500;
-    text-decoration: none; letter-spacing: .08em; text-transform: uppercase;
-    transition: color .2s;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
   }
-  nav ul a:hover { color: var(--amber); }
+  nav ul a:hover { color: var(--primary); }
 
   .hero {
-    background: var(--pine);
-    color: var(--cream);
-    padding: 6rem 2.5rem 5rem;
-    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 7rem 2.5rem 6rem;
+    position: relative;
+    overflow: hidden;
   }
   
-  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(56,189,248,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+  
   .hero-tag {
     display: inline-block;
-    background: var(--amber); color: var(--pine);
-    font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
-    padding: .28rem .9rem; border-radius: 2px; margin-bottom: 1.4rem;
+    background: rgba(56, 189, 248, 0.2);
+    color: var(--accent);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
   }
   
   .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.4rem, 5vw, 3.8rem);
-    font-weight: 900; line-height: 1.12;
-    margin-bottom: 1.2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
   }
   
   .hero p {
-    font-size: 1.08rem; color: #b8cec7; max-width: 600px;
-    margin-bottom: 2.2rem; line-height: 1.75;
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 600px;
+    margin-bottom: 2.5rem;
   }
 
   .btn-pinterest {
-    display: inline-flex; align-items: center; gap: .55rem;
-    background: #e60023; color: #fff;
-    padding: .75rem 1.8rem; border-radius: 4px;
-    font-weight: 600; font-size: .92rem; text-decoration: none;
-    box-shadow: 0 4px 20px rgba(230,0,35,.35);
-  }
-
-  .container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
-  section { padding: 4.5rem 0; border-bottom: 1px solid var(--border); }
-
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
-    color: var(--sage); margin-bottom: .6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--danger);
+    color: #fff;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.3);
+    transition: all 0.2s;
   }
   
-  h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 700; margin-bottom: 1.5rem; }
-  h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--pine); margin: 1.5rem 0 0.5rem; }
+  .btn-pinterest:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(225, 29, 72, 0.4);
+  }
 
-  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-  .card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 1.8rem 1.5rem; border-top: 4px solid var(--sage); }
-  .card.amber { border-top-color: var(--amber); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+  section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
 
-  .parts-list { margin-top: 1.8rem; display: flex; flex-direction: column; gap: 1rem; }
-  .part-item { display: grid; grid-template-columns: 48px 1fr; gap: 1rem; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem 1.4rem; }
-  .part-num { background: var(--pine); color: var(--cream); font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 6px; }
+  .section-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+  }
+  
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+  }
 
-  .example-box { background: var(--mist); border-left: 5px solid var(--amber); padding: 2rem; margin-top: 2rem; border-radius: 0 8px 8px 0; }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
+  }
+  
+  .card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    color: var(--text-main);
+    margin-bottom: 0.8rem;
+  }
+  
+  .card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
 
-  .genially-container { width: 100%; margin-top: 2rem; position: relative; padding-top: 56.25%; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-  .genially-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .parts-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .part-item {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+  
+  .part-num {
+    background: var(--primary);
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+  }
+  
+  .part-content h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+  }
+  
+  .part-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
 
-  .team-section { background: var(--pine); color: #b8cec7; padding: 4rem 0; border-top: 4px solid var(--amber); }
-  .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2rem; }
-  .team-member { border-left: 2px solid var(--amber); padding-left: 1rem; }
-  .team-member h4 { color: var(--cream); font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 0.3rem; }
-  .team-member p { color: var(--amber); font-size: 0.8rem; text-transform: uppercase; margin: 0; }
+  .example-box {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    color: #ffffff;
+    padding: 2.5rem;
+    margin-top: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+  }
+  
+  .example-box h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .example-box p {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
 
-  footer { background: #0d2119; color: #7da89a; text-align: center; padding: 2rem; font-size: .85rem; }
+  .genially-container {
+    width: 100%;
+    margin-top: 2rem;
+    position: relative;
+    padding-top: 56.25%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+  }
+  
+  .genially-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+
+  .team-section {
+    background: var(--bg-card);
+    padding: 6rem 0;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  
+  .team-member {
+    background: var(--bg-body);
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: transform 0.2s;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-5px);
+  }
+  
+  .team-avatar {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+  }
+  
+  .team-member h4 {
+    color: var(--text-main);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .team-member p {
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+    .hero { padding: 5rem 1.5rem; }
+    .container { padding: 0 1.5rem; }
+    .part-item { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+  }
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="brand" href="#">📚 Ingeniería de Software</a>
+  <a class="brand" href="#">ISW · UAEMéx</a>
   <ul>
     <li><a href="#dimensiones">Dimensiones</a></li>
     <li><a href="#viabilidad">Viabilidad</a></li>
@@ -138,72 +351,111 @@
 <div class="hero">
   <div class="hero-inner">
     <span class="hero-tag">Análisis Previo al Desarrollo</span>
-    <h1>Estudios de <em>Factibilidad</em><br>y Viabilidad</h1>
+    <h1>Estudios de <span style="color: var(--accent);">Factibilidad</span> y Viabilidad</h1>
     <p>El primer paso crítico en el ciclo de vida del software es validar si la inversión de tiempo y recursos está justificada técnica y económicamente.</p>
     <a class="btn-pinterest" href="https://pin.it/3CG7Gkgsr" target="_blank">
-      <svg viewBox="0 0 24 24" width="20" fill="white" style="margin-right:10px;"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-      Ir al Tablero de Pinterest
+      <svg viewBox="0 0 24 24" width="18" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+      Ver Tablero de Pinterest
     </a>
   </div>
 </div>
 
 <section id="dimensiones">
   <div class="container">
-    <div class="section-label">📌 Conceptos Clave</div>
+    <div class="section-label">Conceptos Clave</div>
     <h2>Dimensiones de la Factibilidad</h2>
     <div class="cards-grid">
-      <div class="card"><h3>Factibilidad Técnica</h3><p>¿Contamos con la infraestructura y el conocimiento para construir el sistema?</p></div>
-      <div class="card amber"><h3>Factibilidad Económica</h3><p>Análisis de costo-beneficio y retorno de inversión esperado.</p></div>
-      <div class="card"><h3>Factibilidad Operativa</h3><p>¿Los usuarios están dispuestos y capacitados para usar el sistema?</p></div>
+      <div class="card">
+        <h3>Técnica</h3>
+        <p>¿Contamos con la infraestructura, las herramientas y el conocimiento necesario para construir el sistema?</p>
+      </div>
+      <div class="card">
+        <h3>Económica</h3>
+        <p>Análisis riguroso de costo-beneficio, cálculo de presupuesto inicial y estimación del retorno de inversión.</p>
+      </div>
+      <div class="card">
+        <h3>Operativa</h3>
+        <p>¿Los usuarios están dispuestos y capacitados para adoptar la nueva solución tecnológica en su día a día?</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="viabilidad">
   <div class="container">
-    <div class="section-label">📌 Metodología</div>
-    <h2>Estructura del Estudio de Viabilidad</h2>
+    <div class="section-label">Fase Preliminar</div>
+    <h2>Estructura de Viabilidad</h2>
     <div class="parts-list">
-      <div class="part-item"><div class="part-num">1</div><div class="part-content"><h3>Problema</h3><p>Descripción clara de la necesidad insatisfecha.</p></div></div>
-      <div class="part-item"><div class="part-num">2</div><div class="part-content"><h3>Situación Actual</h3><p>Análisis de cómo se gestiona el proceso actualmente.</p></div></div>
-      <div class="part-item"><div class="part-num">3</div><div class="part-content"><h3>Requisitos</h3><p>Funcionalidades mínimas que debe tener la solución.</p></div></div>
-      <div class="part-item"><div class="part-num">4</div><div class="part-content"><h3>Alternativas</h3><p>Comparación de diferentes enfoques técnicos.</p></div></div>
-      <div class="part-item"><div class="part-num">5</div><div class="part-content"><h3>Veredicto</h3><p>Dictamen inicial para proceder al estudio profundo.</p></div></div>
+      <div class="part-item">
+        <div class="part-num">1</div>
+        <div class="part-content"><h3>Problema</h3><p>Descripción clara de la necesidad insatisfecha u oportunidad de mejora.</p></div>
+      </div>
+      <div class="part-item">
+        <div class="part-num">2</div>
+        <div class="part-content"><h3>Situación Actual</h3><p>Análisis objetivo de cómo se gestiona el proceso actualmente.</p></div>
+      </div>
+      <div class="part-item">
+        <div class="part-num">3</div>
+        <div class="part-content"><h3>Requisitos</h3><p>Funcionalidades mínimas y restricciones que debe tener la solución.</p></div>
+      </div>
+      <div class="part-item">
+        <div class="part-num">4</div>
+        <div class="part-content"><h3>Alternativas</h3><p>Comparación de diferentes enfoques técnicos y de mercado.</p></div>
+      </div>
+      <div class="part-item">
+        <div class="part-num">5</div>
+        <div class="part-content"><h3>Veredicto</h3><p>Dictamen inicial para decidir si se procede al estudio profundo.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="factibilidad">
   <div class="container">
-    <div class="section-label">📌 Análisis Profundo</div>
-    <h2>Estructura del Estudio de Factibilidad</h2>
+    <div class="section-label">Análisis Profundo</div>
+    <h2>Estructura de Factibilidad</h2>
     <div class="parts-list">
-      <div class="part-item"><div class="part-num">1</div><div class="part-content"><h3>Resumen Ejecutivo</h3><p>Visión global de costos y rentabilidad para gerencia.</p></div></div>
-      <div class="part-item"><div class="part-num">2</div><div class="part-content"><h3>Desglose Económico</h3><p>Presupuesto de licencias, hardware y horas-hombre.</p></div></div>
-      <div class="part-item"><div class="part-num">3</div><div class="part-content"><h3>Matriz de Riesgos</h3><p>Identificación de factores que podrían comprometer el éxito.</p></div></div>
-      <div class="part-item"><div class="part-num">4</div><div class="part-content"><h3>Plan de Acción</h3><p>Cronograma preliminar de implementación.</p></div></div>
-      <div class="part-item"><div class="part-num">5</div><div class="part-content"><h3>Recomendación</h3><p>Aprobación final para el inicio del ciclo de desarrollo.</p></div></div>
+      <div class="part-item">
+        <div class="part-num">1</div>
+        <div class="part-content"><h3>Resumen Ejecutivo</h3><p>Visión global de costos y rentabilidad orientada a la gerencia.</p></div>
+      </div>
+      <div class="part-item">
+        <div class="part-num">2</div>
+        <div class="part-content"><h3>Desglose Económico</h3><p>Presupuesto exacto de licencias, hardware, servidores y horas-hombre.</p></div>
+      </div>
+      <div class="part-item">
+        <div class="part-num">3</div>
+        <div class="part-content"><h3>Matriz de Riesgos</h3><p>Identificación y mitigación de factores que podrían comprometer el éxito.</p></div>
+      </div>
+      <div class="part-item">
+        <div class="part-num">4</div>
+        <div class="part-content"><h3>Plan de Acción</h3><p>Cronograma preliminar de implementación y asignación de recursos.</p></div>
+      </div>
+      <div class="part-item">
+        <div class="part-num">5</div>
+        <div class="part-content"><h3>Recomendación</h3><p>Aprobación técnica formal para el inicio del ciclo de desarrollo.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="ejemplo">
   <div class="container">
-    <div class="section-label">📌 Caso Práctico</div>
-    <h2>Ejemplo Genérico: Sistema de Inventarios</h2>
+    <div class="section-label">Caso Práctico</div>
+    <h2>Ejemplo: Sistema de Inventarios</h2>
     <div class="example-box">
       <h3>Proyecto: "InventoryFlow v1.0"</h3>
-      <p><strong>Contexto:</strong> Una ferretería local pierde el 15% de su mercancía por mal seguimiento manual.</p>
-      <p><strong>Viabilidad:</strong> Es posible implementar una base de datos local y lectores de códigos de barras básicos.</p>
-      <p><strong>Factibilidad:</strong> El desarrollo cuesta $30,000 MXN. Se estima recuperar la inversión en 6 meses al reducir las pérdidas de stock. El equipo técnico domina SQL y Java para la implementación.</p>
+      <p><strong>Contexto:</strong> Una empresa de suministros pierde el 15% de su mercancía trimestral por mal seguimiento manual y falta de trazabilidad.</p>
+      <p><strong>Viabilidad:</strong> Se aprueba la idea de implementar una base de datos local conectada a lectores de códigos de barras estándar.</p>
+      <p><strong>Factibilidad:</strong> El costo de desarrollo e implementación se fija en $30,000 MXN. Las proyecciones financieras indican que se recuperará la inversión en 6 meses mediante la reducción de mermas. El equipo interno tiene la capacidad técnica requerida (SQL/Python).</p>
     </div>
   </div>
 </section>
 
 <section id="interactivo">
   <div class="container">
-    <div class="section-label">📌 Material Interactivo</div>
-    <h2>Infografía Interactiva</h2>
+    <div class="section-label">Material Interactivo</div>
+    <h2>Glosario Dinámico</h2>
     <div class="genially-container">
       <iframe title="Factibilidad y Viabilidad" src="https://view.genially.com/69fb88e8af8ea6599baabe50" allowfullscreen="true"></iframe>
     </div>
@@ -212,22 +464,32 @@
 
 <section class="team-section">
   <div class="container">
-    <div class="section-label" style="color: var(--amber)">👥 Autores</div>
-    <h2 style="color: var(--cream)">Equipo de Trabajo</h2>
+    <div class="section-label" style="text-align: center;">Créditos</div>
+    <h2 style="text-align: center;">Equipo de Trabajo</h2>
     <div class="team-grid">
-      <div class="team-member"><h4>Debbie Marina Padilla Lara</h4><p>Ingeniería de Software</p></div>
-      <div class="team-member"><h4>Luis Angel Alcantar Gutierrez</h4><p>Ingeniería de Software</p></div>
-      <div class="team-member"><h4>Cesar Augusto Sanchez Monrroy</h4><p>Ingeniería de Software</p></div>
-      <div class="team-member"><h4>Axel Tadeo Romero Pla</h4><p>Ingeniería de Software</p></div>
+      <div class="team-member">
+        <div class="team-avatar">D</div>
+        <h4>Debbie Marina Padilla Lara</h4>
+        <p>Ingeniería de Software</p>
+      </div>
+      <div class="team-member">
+        <div class="team-avatar">L</div>
+        <h4>Luis Angel Alcantar Gutierrez</h4>
+        <p>Ingeniería de Software</p>
+      </div>
+      <div class="team-member">
+        <div class="team-avatar">C</div>
+        <h4>Cesar Augusto Sanchez Monrroy</h4>
+        <p>Ingeniería de Software</p>
+      </div>
+      <div class="team-member">
+        <div class="team-avatar">A</div>
+        <h4>Axel Tadeo Romero Pla</h4>
+        <p>Ingeniería de Software</p>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <p>Ingeniería de Software · UAEMéx · 2026</p>
-</footer>
-
 </body>
 </html>
-
-¡Tu blog y presentación están listos! Solo copia el código del blog en tu archivo `index.html` en GitHub y tendrás un sitio académico de primer nivel. Avísame si necesitas cualquier otro ajuste.
