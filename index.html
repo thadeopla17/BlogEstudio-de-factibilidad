@@ -21,7 +21,6 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -48,13 +47,11 @@
   }
   
   nav ul { display: flex; gap: 1.8rem; list-style: none; }
-  
   nav ul a {
     color: #c8d8d0; font-size: .82rem; font-weight: 500;
     text-decoration: none; letter-spacing: .08em; text-transform: uppercase;
     transition: color .2s;
   }
-  
   nav ul a:hover { color: var(--amber); }
 
   .hero {
@@ -64,14 +61,7 @@
     position: relative; overflow: hidden;
   }
   
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 70% 60% at 80% 40%, #2d6b54 0%, transparent 70%);
-  }
-  
   .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
-  
   .hero-tag {
     display: inline-block;
     background: var(--amber); color: var(--pine);
@@ -86,8 +76,6 @@
     margin-bottom: 1.2rem;
   }
   
-  .hero h1 em { color: var(--amber); font-style: italic; }
-  
   .hero p {
     font-size: 1.08rem; color: #b8cec7; max-width: 600px;
     margin-bottom: 2.2rem; line-height: 1.75;
@@ -99,16 +87,10 @@
     padding: .75rem 1.8rem; border-radius: 4px;
     font-weight: 600; font-size: .92rem; text-decoration: none;
     box-shadow: 0 4px 20px rgba(230,0,35,.35);
-    transition: transform .2s, box-shadow .2s;
   }
-  
-  .btn-pinterest:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(230,0,35,.45); }
-  .btn-pinterest svg { width: 20px; height: 20px; }
 
   .container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
-
   section { padding: 4.5rem 0; border-bottom: 1px solid var(--border); }
-  section:last-of-type { border-bottom: none; }
 
   .section-label {
     font-family: 'DM Mono', monospace;
@@ -116,133 +98,29 @@
     color: var(--sage); margin-bottom: .6rem;
   }
   
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.7rem, 3vw, 2.3rem);
-    font-weight: 700; margin-bottom: 1.5rem; line-height: 1.25;
-  }
-  
-  p { margin-bottom: 1rem; color: #2e3a35; }
+  h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 700; margin-bottom: 1.5rem; }
+  h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--pine); margin: 1.5rem 0 0.5rem; }
 
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem; margin-top: 2rem;
-  }
-  
-  .card {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.8rem 1.5rem;
-    border-top: 4px solid var(--sage);
-    transition: box-shadow .25s, transform .25s;
-  }
-  
-  .card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.08); transform: translateY(-3px); }
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 1.8rem 1.5rem; border-top: 4px solid var(--sage); }
   .card.amber { border-top-color: var(--amber); }
-  .card.rust  { border-top-color: var(--rust); }
-  .card.pine  { border-top-color: var(--pine); }
-  
-  .card-icon { font-size: 2rem; margin-bottom: 0.8rem; }
-  .card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 0.6rem; color: var(--pine); }
-  .card p { font-size: 0.9rem; color: #4a5550; margin: 0; line-height: 1.6; }
-
-  .table-wrap { overflow-x: auto; margin-top: 1.8rem; border-radius: 8px; box-shadow: 0 2px 16px rgba(0,0,0,.07); }
-  table { width: 100%; border-collapse: collapse; background: #fff; }
-  thead tr { background: var(--pine); color: var(--cream); }
-  th {
-    padding: .9rem 1.1rem; text-align: left;
-    font-size: .8rem; letter-spacing: .1em; text-transform: uppercase;
-    font-family: 'DM Mono', monospace; font-weight: 500;
-  }
-  td {
-    padding: .85rem 1.1rem; font-size: .9rem;
-    border-bottom: 1px solid var(--mist); vertical-align: top;
-  }
-  tbody tr:nth-child(even) { background: var(--mist); }
-  td:first-child { font-weight: 600; color: var(--pine); }
-  td.check { color: var(--sage); font-weight: bold; }
-  td.cross { color: var(--rust); font-weight: bold; }
 
   .parts-list { margin-top: 1.8rem; display: flex; flex-direction: column; gap: 1rem; }
-  .part-item {
-    display: grid; grid-template-columns: 48px 1fr;
-    gap: 1rem; align-items: start;
-    background: #fff; border: 1px solid var(--border);
-    border-radius: 8px; padding: 1.2rem 1.4rem;
-    transition: border-color .2s;
-  }
-  .part-item:hover { border-color: var(--sage); }
-  .part-num {
-    background: var(--pine); color: var(--cream);
-    font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-    width: 42px; height: 42px; border-radius: 6px; flex-shrink: 0;
-  }
-  .part-content h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; margin-bottom: .3rem; color: var(--pine); }
-  .part-content p { font-size: .88rem; color: #4a5550; margin: 0; }
+  .part-item { display: grid; grid-template-columns: 48px 1fr; gap: 1rem; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem 1.4rem; }
+  .part-num { background: var(--pine); color: var(--cream); font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 6px; }
 
-  .genially-container {
-    width: 100%;
-    margin-top: 2rem;
-    position: relative;
-    padding-top: 56.25%;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    background: #fff;
-  }
-  .genially-container iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    border: none;
-  }
+  .example-box { background: var(--mist); border-left: 5px solid var(--amber); padding: 2rem; margin-top: 2rem; border-radius: 0 8px 8px 0; }
 
-  .team-section {
-    background: var(--pine);
-    color: #b8cec7;
-    padding: 4rem 0;
-    border-top: 4px solid var(--amber);
-  }
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-    margin-top: 2.5rem;
-  }
-  .team-member {
-    border-left: 2px solid var(--amber);
-    padding-left: 1rem;
-  }
-  .team-member h4 {
-    color: var(--cream);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    margin-bottom: 0.3rem;
-  }
-  .team-member p {
-    color: var(--amber);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin: 0;
-  }
+  .genially-container { width: 100%; margin-top: 2rem; position: relative; padding-top: 56.25%; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+  .genially-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-  footer {
-    background: #0d2119;
-    color: #7da89a;
-    text-align: center;
-    padding: 2rem;
-    font-size: .85rem;
-  }
+  .team-section { background: var(--pine); color: #b8cec7; padding: 4rem 0; border-top: 4px solid var(--amber); }
+  .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2rem; }
+  .team-member { border-left: 2px solid var(--amber); padding-left: 1rem; }
+  .team-member h4 { color: var(--cream); font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 0.3rem; }
+  .team-member p { color: var(--amber); font-size: 0.8rem; text-transform: uppercase; margin: 0; }
 
-  @media (max-width: 768px) {
-    nav ul { display: none; }
-    .hero { padding: 4rem 1.5rem; }
-    .container { padding: 0 1.2rem; }
-  }
+  footer { background: #0d2119; color: #7da89a; text-align: center; padding: 2rem; font-size: .85rem; }
 </style>
 </head>
 <body>
@@ -251,197 +129,105 @@
   <a class="brand" href="#">📚 Ingeniería de Software</a>
   <ul>
     <li><a href="#dimensiones">Dimensiones</a></li>
-    <li><a href="#comparativo">Comparativo</a></li>
-    <li><a href="#estructura">Estructura</a></li>
-    <li><a href="#interactivo">Interactivo</a></li>
+    <li><a href="#viabilidad">Viabilidad</a></li>
+    <li><a href="#factibilidad">Factibilidad</a></li>
+    <li><a href="#ejemplo">Ejemplo</a></li>
   </ul>
 </nav>
 
 <div class="hero">
   <div class="hero-inner">
-    <span class="hero-tag">Análisis y Planeación de Software</span>
+    <span class="hero-tag">Análisis Previo al Desarrollo</span>
     <h1>Estudios de <em>Factibilidad</em><br>y Viabilidad</h1>
-    <p>Antes de escribir una sola línea de código, es fundamental evaluar si un proyecto de software es técnica, económica y operativamente posible y rentable. Descubre los conceptos clave y herramientas de análisis.</p>
+    <p>El primer paso crítico en el ciclo de vida del software es validar si la inversión de tiempo y recursos está justificada técnica y económicamente.</p>
     <a class="btn-pinterest" href="https://pin.it/3CG7Gkgsr" target="_blank">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-      Ver Tablero en Pinterest
+      <svg viewBox="0 0 24 24" width="20" fill="white" style="margin-right:10px;"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+      Ir al Tablero de Pinterest
     </a>
   </div>
 </div>
 
 <section id="dimensiones">
   <div class="container">
-    <div class="section-label">📌 Fundamentos</div>
-    <h2>Dimensiones de la Factibilidad en Software</h2>
-    <p>Para determinar si el desarrollo de un sistema informático conviene realizarse, se debe someter a una evaluación rigurosa a través de estas cinco dimensiones principales.</p>
-
+    <div class="section-label">📌 Conceptos Clave</div>
+    <h2>Dimensiones de la Factibilidad</h2>
     <div class="cards-grid">
-      <div class="card">
-        <div class="card-icon">💻</div>
-        <h3>Factibilidad Técnica</h3>
-        <p>Evalúa si se cuenta con la infraestructura tecnológica, el hardware, las licencias de software y el nivel de conocimientos técnicos en el equipo de desarrollo para construir el sistema propuesto.</p>
-      </div>
-
-      <div class="card amber">
-        <div class="card-icon">💰</div>
-        <h3>Factibilidad Económica</h3>
-        <p>Consiste en un análisis de costo-beneficio. Se calcula el presupuesto necesario para el desarrollo, infraestructura y mantenimiento contra los beneficios económicos o ahorros que generará el sistema (Cálculo del ROI, VAN y TIR).</p>
-      </div>
-
-      <div class="card pine">
-        <div class="card-icon">👥</div>
-        <h3>Factibilidad Operativa</h3>
-        <p>Analiza si el sistema será utilizado adecuadamente por los usuarios finales. Considera la resistencia al cambio, la curva de aprendizaje, la necesidad de capacitación y cómo impactará en los procesos actuales de la empresa.</p>
-      </div>
-
-      <div class="card rust">
-        <div class="card-icon">⚖️</div>
-        <h3>Factibilidad Legal</h3>
-        <p>Determina si el proyecto cumple con las normativas vigentes. En software, esto implica leyes de protección de datos, propiedad intelectual, uso de librerías open-source y cumplimiento de estándares de seguridad.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">⏱️</div>
-        <h3>Factibilidad de Tiempo</h3>
-        <p>Evalúa si los plazos establecidos por el cliente o el mercado son realistas. Se verifica si el equipo de desarrollo puede cumplir con los entregables sin comprometer la calidad del código mediante metodologías ágiles o tradicionales.</p>
-      </div>
+      <div class="card"><h3>Factibilidad Técnica</h3><p>¿Contamos con la infraestructura y el conocimiento para construir el sistema?</p></div>
+      <div class="card amber"><h3>Factibilidad Económica</h3><p>Análisis de costo-beneficio y retorno de inversión esperado.</p></div>
+      <div class="card"><h3>Factibilidad Operativa</h3><p>¿Los usuarios están dispuestos y capacitados para usar el sistema?</p></div>
     </div>
   </div>
 </section>
 
-<section id="comparativo">
+<section id="viabilidad">
   <div class="container">
-    <div class="section-label">📌 Análisis Comparativo</div>
-    <h2>Factibilidad vs. Viabilidad</h2>
-    <p>Aunque en la práctica se usan como sinónimos, en la gestión de proyectos de software representan fases distintas del análisis previo al desarrollo.</p>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Criterio de Evaluación</th>
-            <th>Estudio de Viabilidad</th>
-            <th>Estudio de Factibilidad</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Pregunta que responde</td>
-            <td>¿Es posible desarrollar el sistema?</td>
-            <td>¿Conviene desarrollar el sistema?</td>
-          </tr>
-          <tr>
-            <td>Nivel de profundidad</td>
-            <td>Superficial / Alto nivel</td>
-            <td>Detallado / Cuantitativo y preciso</td>
-          </tr>
-          <tr>
-            <td>Momento de ejecución</td>
-            <td>Al inicio, durante la conceptualización</td>
-            <td>Después de confirmar que el proyecto es viable</td>
-          </tr>
-          <tr>
-            <td>Costo y esfuerzo del estudio</td>
-            <td>Bajo y rápido</td>
-            <td>Alto y requiere tiempo de investigación</td>
-          </tr>
-          <tr>
-            <td>Métricas Financieras (VAN/TIR)</td>
-            <td class="cross">No se incluyen generalmente</td>
-            <td class="check">✓ Son indispensables para decidir</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section id="estructura">
-  <div class="container">
-    <div class="section-label">📌 Documentación Formal</div>
-    <h2>Estructura del Estudio de Factibilidad</h2>
-    <p>El resultado del análisis se documenta en un informe que servirá para la toma de decisiones gerenciales. Sus componentes esenciales son:</p>
-
+    <div class="section-label">📌 Metodología</div>
+    <h2>Estructura del Estudio de Viabilidad</h2>
     <div class="parts-list">
-      <div class="part-item">
-        <div class="part-num">1</div>
-        <div class="part-content">
-          <h3>Resumen Ejecutivo</h3>
-          <p>Síntesis del análisis y la recomendación final. Es la sección que leen los directores y tomadores de decisiones para aprobar o rechazar el proyecto.</p>
-        </div>
-      </div>
-      <div class="part-item">
-        <div class="part-num">2</div>
-        <div class="part-content">
-          <h3>Descripción del Sistema Actual y Propuesto</h3>
-          <p>Se detalla el problema actual de la organización y cómo el nuevo software automatizará o mejorará los flujos de trabajo existentes.</p>
-        </div>
-      </div>
-      <div class="part-item">
-        <div class="part-num">3</div>
-        <div class="part-content">
-          <h3>Desglose de Dimensiones</h3>
-          <p>El desarrollo a detalle de los estudios técnicos, económicos, operativos y legales, incluyendo estimaciones de hardware, licenciamiento y esfuerzo humano.</p>
-        </div>
-      </div>
-      <div class="part-item">
-        <div class="part-num">4</div>
-        <div class="part-content">
-          <h3>Análisis de Alternativas</h3>
-          <p>Presentación de diferentes enfoques (por ejemplo: comprar un software ya hecho vs. desarrollarlo desde cero) y los pros y contras de cada opción.</p>
-        </div>
-      </div>
-      <div class="part-item">
-        <div class="part-num">5</div>
-        <div class="part-content">
-          <h3>Conclusiones y Recomendación</h3>
-          <p>El veredicto final. El equipo de ingeniería recomienda proceder con el desarrollo, posponerlo o cancelarlo definitivamente basado en los datos recabados.</p>
-        </div>
-      </div>
+      <div class="part-item"><div class="part-num">1</div><div class="part-content"><h3>Problema</h3><p>Descripción clara de la necesidad insatisfecha.</p></div></div>
+      <div class="part-item"><div class="part-num">2</div><div class="part-content"><h3>Situación Actual</h3><p>Análisis de cómo se gestiona el proceso actualmente.</p></div></div>
+      <div class="part-item"><div class="part-num">3</div><div class="part-content"><h3>Requisitos</h3><p>Funcionalidades mínimas que debe tener la solución.</p></div></div>
+      <div class="part-item"><div class="part-num">4</div><div class="part-content"><h3>Alternativas</h3><p>Comparación de diferentes enfoques técnicos.</p></div></div>
+      <div class="part-item"><div class="part-num">5</div><div class="part-content"><h3>Veredicto</h3><p>Dictamen inicial para proceder al estudio profundo.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="factibilidad">
+  <div class="container">
+    <div class="section-label">📌 Análisis Profundo</div>
+    <h2>Estructura del Estudio de Factibilidad</h2>
+    <div class="parts-list">
+      <div class="part-item"><div class="part-num">1</div><div class="part-content"><h3>Resumen Ejecutivo</h3><p>Visión global de costos y rentabilidad para gerencia.</p></div></div>
+      <div class="part-item"><div class="part-num">2</div><div class="part-content"><h3>Desglose Económico</h3><p>Presupuesto de licencias, hardware y horas-hombre.</p></div></div>
+      <div class="part-item"><div class="part-num">3</div><div class="part-content"><h3>Matriz de Riesgos</h3><p>Identificación de factores que podrían comprometer el éxito.</p></div></div>
+      <div class="part-item"><div class="part-num">4</div><div class="part-content"><h3>Plan de Acción</h3><p>Cronograma preliminar de implementación.</p></div></div>
+      <div class="part-item"><div class="part-num">5</div><div class="part-content"><h3>Recomendación</h3><p>Aprobación final para el inicio del ciclo de desarrollo.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="ejemplo">
+  <div class="container">
+    <div class="section-label">📌 Caso Práctico</div>
+    <h2>Ejemplo Genérico: Sistema de Inventarios</h2>
+    <div class="example-box">
+      <h3>Proyecto: "InventoryFlow v1.0"</h3>
+      <p><strong>Contexto:</strong> Una ferretería local pierde el 15% de su mercancía por mal seguimiento manual.</p>
+      <p><strong>Viabilidad:</strong> Es posible implementar una base de datos local y lectores de códigos de barras básicos.</p>
+      <p><strong>Factibilidad:</strong> El desarrollo cuesta $30,000 MXN. Se estima recuperar la inversión en 6 meses al reducir las pérdidas de stock. El equipo técnico domina SQL y Java para la implementación.</p>
     </div>
   </div>
 </section>
 
 <section id="interactivo">
   <div class="container">
-    <div class="section-label">📌 Material Didáctico</div>
-    <h2>Glosario Interactivo en Genially</h2>
-    <p>Explora la siguiente infografía para repasar de forma dinámica los conceptos clave y el flujo de trabajo en la ingeniería de software.</p>
-    
+    <div class="section-label">📌 Material Interactivo</div>
+    <h2>Infografía Interactiva</h2>
     <div class="genially-container">
-      <iframe title="Estudios de Factibilidad" allowfullscreen="true" allow="fullscreen" src="https://view.genially.com/69fb88e8af8ea6599baabe50" type="text/html"></iframe>
+      <iframe title="Factibilidad y Viabilidad" src="https://view.genially.com/69fb88e8af8ea6599baabe50" allowfullscreen="true"></iframe>
     </div>
   </div>
 </section>
 
 <section class="team-section">
   <div class="container">
-    <div class="section-label" style="color: var(--amber)">👥 Colaboradores</div>
-    <h2 style="color: var(--cream)">Equipo de Desarrollo</h2>
+    <div class="section-label" style="color: var(--amber)">👥 Autores</div>
+    <h2 style="color: var(--cream)">Equipo de Trabajo</h2>
     <div class="team-grid">
-      <div class="team-member">
-        <h4>Debbie Marina Padilla Lara</h4>
-        <p>Ingeniería de Software</p>
-      </div>
-      <div class="team-member">
-        <h4>Luis Angel Alcantar Gutierrez</h4>
-        <p>Ingeniería de Software</p>
-      </div>
-      <div class="team-member">
-        <h4>Cesar Augusto Sanchez Monrroy</h4>
-        <p>Ingeniería de Software</p>
-      </div>
-      <div class="team-member">
-        <h4>Axel Tadeo Romero Pla</h4>
-        <p>Ingeniería de Software</p>
-      </div>
+      <div class="team-member"><h4>Debbie Marina Padilla Lara</h4><p>Ingeniería de Software</p></div>
+      <div class="team-member"><h4>Luis Angel Alcantar Gutierrez</h4><p>Ingeniería de Software</p></div>
+      <div class="team-member"><h4>Cesar Augusto Sanchez Monrroy</h4><p>Ingeniería de Software</p></div>
+      <div class="team-member"><h4>Axel Tadeo Romero Pla</h4><p>Ingeniería de Software</p></div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>Blog Académico · Ingeniería de Software · 2026</p>
-  <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.6;">Universidad Autónoma del Estado de México (UAEMéx)</p>
+  <p>Ingeniería de Software · UAEMéx · 2026</p>
 </footer>
 
 </body>
 </html>
+
+¡Tu blog y presentación están listos! Solo copia el código del blog en tu archivo `index.html` en GitHub y tendrás un sitio académico de primer nivel. Avísame si necesitas cualquier otro ajuste.
