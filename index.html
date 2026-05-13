@@ -7,25 +7,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* TRON Legacy Palette */
     --bg-dark: #000000;
     --bg-panel: #050509;
     --text-main: #ffffff;
     --text-muted: #a0a0b0;
     
-    /* Neon Colors */
     --tron-cyan: #00ffff;
     --tron-cyan-glow: rgba(0, 255, 255, 0.6);
     --tron-blue-dark: #0019ff;
     
-    /* Enemy/Accent Colors */
     --tron-orange: #ff9900;
     --tron-orange-glow: rgba(255, 153, 0, 0.6);
     --tron-red: #ff0000;
     
     --border: rgba(0, 255, 255, 0.15);
     
-    /* Fonts */
     --font-tech: 'Orbitron', sans-serif;
     --font-mono: 'Roboto Mono', monospace;
   }
@@ -36,7 +32,6 @@
   body {
     font-family: var(--font-mono);
     background-color: var(--bg-dark);
-    /* Grid de fondo tipo TRON */
     background-image: 
       linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
       linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
@@ -46,7 +41,6 @@
     overflow-x: hidden;
   }
 
-  /* Barras de luz decorativas fijas */
   body::before, body::after {
     content: '';
     position: fixed;
@@ -61,7 +55,6 @@
   body::before { left: 10px; }
   body::after { right: 10px; }
 
-  /* --- NAV --- */
   nav {
     position: sticky;
     top: 0;
@@ -104,7 +97,6 @@
     text-shadow: 0 0 10px var(--tron-cyan-glow);
   }
 
-  /* --- HERO --- */
   .hero {
     padding: 10rem 2.5rem 8rem;
     position: relative;
@@ -112,7 +104,6 @@
     background: radial-gradient(circle at center, #001a33 0%, #000000 70%);
   }
   
-  /* Efecto de perspectiva de circuito en el suelo */
   .hero::after {
     content: '';
     position: absolute;
@@ -138,7 +129,7 @@
     letter-spacing: 0.3em;
     text-transform: uppercase;
     padding: 0.5rem 1.5rem;
-    border-radius: 0; /* TRON es angular */
+    border-radius: 0;
     margin-bottom: 2rem;
     box-shadow: 0 0 10px inset var(--tron-cyan-glow), 0 0 10px var(--tron-cyan-glow);
     background: rgba(0, 0, 0, 0.5);
@@ -188,7 +179,6 @@
     transform: scale(1.05);
   }
 
-  /* --- SECCIONES GENERALES --- */
   .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
   section { padding: 6rem 0; border-bottom: 1px solid var(--border); position: relative; }
   section:last-of-type { border-bottom: none; }
@@ -215,7 +205,6 @@
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   }
 
-  /* --- CARDS DIMENSIONES --- */
   .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -232,7 +221,6 @@
     overflow: hidden;
   }
   
-  /* Esquina cortada digital */
   .card::before {
     content: '';
     position: absolute;
@@ -275,7 +263,6 @@
     font-weight: 300;
   }
 
-  /* --- LISTAS ESTRUCTURAS --- */
   .parts-list {
     margin-top: 3rem;
     display: flex;
@@ -295,7 +282,6 @@
     position: relative;
   }
   
-  /* Línea de datos decorativa */
   .part-item::after {
     content: '';
     position: absolute;
@@ -347,7 +333,6 @@
     font-weight: 300;
   }
 
-  /* --- EJEMPLO BOX (Orange Side) --- */
   .example-box {
     background: rgba(255, 153, 0, 0.05);
     border: 1px solid var(--tron-orange);
@@ -357,7 +342,6 @@
     box-shadow: 0 0 20px inset rgba(255, 153, 0, 0.1);
   }
   
-  /* Escaner decorativo animado */
   .example-box::after {
     content: '';
     position: absolute;
@@ -398,7 +382,6 @@
     font-weight: 700;
   }
 
-  /* --- GENIALLY --- */
   .genially-container {
     width: 100%;
     margin-top: 3rem;
@@ -416,7 +399,6 @@
     border: none;
   }
 
-  /* --- EQUIPO --- */
   .team-section {
     background-color: var(--bg-panel);
     padding: 8rem 0;
@@ -446,7 +428,6 @@
     transform: translateY(-5px);
   }
   
-  /* Conector de circuito decorativo */
   .team-member::before {
     content: '';
     position: absolute;
@@ -467,7 +448,7 @@
     background: transparent;
     border: 2px solid var(--tron-cyan);
     color: var(--tron-cyan);
-    border-radius: 0; /* Angular */
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -496,7 +477,6 @@
     text-transform: uppercase;
   }
 
-  /* --- RESPONSIVE --- */
   @media (max-width: 768px) {
     nav ul { display: none; }
     .hero { padding: 8rem 1.5rem 6rem; }
@@ -547,6 +527,14 @@
       <div class="card">
         <h3>Operativa</h3>
         <p>¿Los usuarios están dispuestos y capacitados para adoptar la nueva solución tecnológica en su día a día?</p>
+      </div>
+      <div class="card">
+        <h3>Legal</h3>
+        <p>¿El proyecto cumple con las normativas vigentes, leyes de protección de datos y propiedad intelectual?</p>
+      </div>
+      <div class="card">
+        <h3>Tiempo</h3>
+        <p>¿Es posible completar el desarrollo y la implementación del sistema dentro de los plazos establecidos?</p>
       </div>
     </div>
   </div>
